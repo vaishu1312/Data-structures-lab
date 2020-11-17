@@ -1,0 +1,222 @@
+typedef struct node *ptrtonode;
+typedef ptrtonode list;
+typedef ptrtonode position;
+
+typedef struct 
+{
+long id;
+char bname[40];
+char genre[25];
+char author[40];
+long yr;
+}book;
+
+struct node
+{
+book b;
+position next;
+};
+
+list Createhead()
+{
+ptrtonode head;
+head=(list)malloc(sizeof(struct node));
+if(head==NULL)
+   printf("\nList creation error");
+else
+{
+   head->next=NULL;
+   printf("\nList created successfully\n");
+}
+return head;
+}
+
+
+list Createlist(list l,int num)
+{
+ptrtonode new_node,ptr;
+int i;
+l=Createhead();
+for(i=0;i<num;i++)
+{
+ new_node = (list)malloc(sizeof(struct node));
+ printf("Enter the details for book-%d: \n",i+1);
+ printf("Enter the ID: ");
+ scanf("%ld",&new_node->b.id);
+  getchar();
+ printf("Enter the name of the book: ");
+ scanf("%s",new_node -> b.bname);
+ //gets(new_node -> b.bname);
+ printf("Enter the genre: ");
+ //gets(new_node -> b.genre);
+ scanf("%s",new_node -> b.genre);
+ printf("Enter the author: ");
+// gets(new_node -> b.author);
+ scanf("%s",new_node -> b.author);
+  printf("Enter the year of publication: ");
+ scanf("%ld",&new_node -> b.yr);
+ new_node -> next = NULL;
+if(l->next == NULL)
+   l->next = new_node;
+else
+{ ptr = l->next;
+while(ptr -> next != NULL)
+   ptr = ptr -> next;
+ptr -> next = new_node;
+}
+}
+return l;
+}
+
+void Display(list l)
+{
+list ptr;
+ptr=l->next;
+printf("\nThe details of the books are:");
+printf("\n ID       TITLE           GENRE         AUTHOR       YOP\n");
+while(ptr != NULL)
+{
+ printf("%ld  ",ptr->b.id);
+ printf("%s\t\t",ptr->b.bname);
+ printf("%s\t",ptr->b.genre);
+ printf("%s\t",ptr->b.author);
+ printf("%ld\n\n",ptr->b.yr);
+ptr = ptr -> next;
+}
+}
+
+int islast(position p, list l)
+{
+return p->next == NULL;
+}
+
+position Findpos(char x[],list l)
+{
+position p;
+p=l->next;
+while(p!=NULL && strcmp(p->b.bname,x)!=0)
+   p=p->next;
+return p;
+}
+
+void Search(char x[],list l)
+{
+position ptr=Findpos(x,l);
+if (ptr==NULL)
+  printf("Element not found");
+else
+{
+printf("\nThe details of the books are:");
+printf("\n ID       TITLE           GENRE         AUTHOR       YOP\n");
+printf("%ld  ",ptr->b.id);
+ printf("%s\t\t",ptr->b.bname);
+ printf("%s\t",ptr->b.genre);
+ //printf("%s\t",ptr->b.author);
+// printf("%ld\n\n",ptr->b.yr);
+}
+}
+
+book InsertInput(list l)
+{ book x;
+ printf("Enter the details for book to be inserted: \n");
+ printf("Enter the ID: ");
+ scanf("%ld",&x.id);
+ getchar();
+ printf("Enter the name of the book: ");
+ //gets(x.bname);
+ scanf("%s",x.bname);
+ printf("Enter the genre: ");
+ //gets(x.genre);
+ scanf("%s",x.genre);
+ printf("Enter the author: ");
+ //gets(x.author);
+ scanf("%s",x.author);
+ printf("Enter the year of publication: ");
+ scanf("%ld",&x.yr);
+ return x;
+}
+
+void Insert(list l)   
+{
+int i;
+char b[40];  //b is the name of the book after which a book is to be inserted
+position p;
+position tmpcell;
+tmpcell = (list)malloc(sizeof(list));
+if(tmpcell == NULL)
+   printf("Insertion error");
+tmpcell->b=InsertInput(l);   //x is a structure variable
+getchar();
+printf("Enter the name of the book after which the given book is to be inserted: ");
+//gets(b);
+scanf("%s",b);
+p=Findpos(b,l);
+tmpcell->next = p->next;
+p->next = tmpcell;    //will insert at position p+1
+printf("Inserted successfully");
+printf("\nThe list after inserting a book:\n");
+Display(l);
+}
+
+position Findprev(char x[], list l)  //retuerns ptr to last element if element not found
+{
+position p=l;
+while(p->next!=NULL && (strcmp(p->next->b.bname,x)!=0))
+    p=p->next;
+return p;
+}
+
+void Delete(char x[],list l)
+{
+list tmpcell;
+position p;
+p=Findprev(x,l);
+if(islast(p,l)) //element present
+  printf("\n Element not found in the list");
+else
+{
+tmpcell = p->next;
+p->next = tmpcell->next;
+free(tmpcell);
+printf("Deleted successfully");
+printf("\nThe list after deleting a book:\n");
+Display(l);
+}
+}
+
+int Count(char g[],list l)
+{
+ int cnt=0;
+ list ptr=l->next;
+ while(ptr != NULL)
+ {   if(strcmp(ptr->b.genre,g)==0)
+          cnt++;
+     ptr=ptr->next;
+ }
+  return cnt;
+}
+
+void Sort(list l)
+{
+ ptrtonode ptr1, ptr2;
+ book temp;
+ ptr1=l->next;
+ while(ptr1 -> next != NULL)
+ {
+ ptr2 = ptr1 -> next;
+ while(ptr2 != NULL)
+ {
+ if(strcmp(ptr1 -> b.author,ptr2 -> b.author)>0)
+ {
+  temp = ptr1 -> b;
+  ptr1 -> b = ptr2 -> b;
+  ptr2 -> b = temp;
+ }
+ ptr2 = ptr2 -> next;
+}
+ptr1 = ptr1 -> next;
+}
+ printf("The sorted list based on author name: \n");
+ Display(l);
+}
+

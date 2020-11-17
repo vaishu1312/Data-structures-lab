@@ -1,0 +1,158 @@
+[csec4181@sel-39 ex2]$ gcc linklist.c
+[csec4181@sel-39 ex2]$ gcc linklist.c -o linklist
+[csec4181@sel-39 ex2]$ ./linklist
+
+Enter number of books to be added to the list: 2
+
+List created successfully
+Enter the details for book-1: 
+Enter the ID: 123
+Enter the name of the book: blue
+Enter the genre: fiction
+Enter the author: hina
+Enter the year of publication: 1990
+Enter the details for book-2: 
+Enter the ID: 231
+Enter the name of the book: red
+Enter the genre: fiction
+Enter the author: nina
+Enter the year of publication: 1987
+
+
+1.Insert a new book after a given book
+2.Delete a particular book
+3.Search a given book by name
+4.Count the number of books under a particular genre
+5.Sort the books by author name and display
+6. Display list of books
+7.Exit
+Enter your choice: 1
+Enter the details for book to be inserted: 
+Enter the ID: 109
+Enter the name of the book: green
+Enter the genre: mystery
+Enter the author: agatha
+Enter the year of publication: 1887
+Enter the name of the book after which the given book is to be inserted: blue
+Inserted successfully
+The list after inserting a book:
+
+The details of the books are:
+ ID       TITLE           GENRE         AUTHOR       YOP
+123  blue		fiction	hina	1990
+
+109  green		mystery	agatha	1887
+
+231  red		fiction	nina	1987
+
+
+Press 1 to go back to menu
+Press 2 to exit
+1
+
+
+1.Insert a new book after a given book
+2.Delete a particular book
+3.Search a given book by name
+4.Count the number of books under a particular genre
+5.Sort the books by author name and display
+6. Display list of books
+7.Exit
+Enter your choice: 3
+
+Enter book name to be searched: red
+
+The details of the books are:
+ ID       TITLE           GENRE         AUTHOR       YOP
+231  red		fiction	
+Press 1 to go back to menu
+Press 2 to exit
+1
+
+
+1.Insert a new book after a given book
+2.Delete a particular book
+3.Search a given book by name
+4.Count the number of books under a particular genre
+5.Sort the books by author name and display
+6. Display list of books
+7.Exit
+Enter your choice: 5
+
+Sorted records: The sorted list based on author name: 
+
+The details of the books are:
+ ID       TITLE           GENRE         AUTHOR       YOP
+109  green		mystery	agatha	1887
+
+123  blue		fiction	hina	1990
+
+231  red		fiction	nina	1987
+
+
+Press 1 to go back to menu
+Press 2 to exit
+1
+
+
+1.Insert a new book after a given book
+2.Delete a particular book
+3.Search a given book by name
+4.Count the number of books under a particular genre
+5.Sort the books by author name and display
+6. Display list of books
+7.Exit
+Enter your choice: 4
+
+Enter genre to be counted: fiction
+
+Number of records under the given genre: 2
+Press 1 to go back to menu
+Press 2 to exit
+1
+
+
+1.Insert a new book after a given book
+2.Delete a particular book
+3.Search a given book by name
+4.Count the number of books under a particular genre
+5.Sort the books by author name and display
+6. Display list of books
+7.Exit
+Enter your choice: 2
+
+Enter book name to be deleted: green
+Deleted successfully
+The list after deleting a book:
+
+The details of the books are:
+ ID       TITLE           GENRE         AUTHOR       YOP
+123  blue		fiction	hina	1990
+
+231  red		fiction	nina	1987
+
+
+Press 1 to go back to menu
+Press 2 to exit
+1
+
+
+1.Insert a new book after a given book
+2.Delete a particular book
+3.Search a given book by name
+4.Count the number of books under a particular genre
+5.Sort the books by author name and display
+6. Display list of books
+7.Exit
+Enter your choice: 6
+
+The details of the books are:
+ ID       TITLE           GENRE         AUTHOR       YOP
+123  blue		fiction	hina	1990
+
+231  red		fiction	nina	1987
+
+
+Press 1 to go back to menu
+Press 2 to exit
+

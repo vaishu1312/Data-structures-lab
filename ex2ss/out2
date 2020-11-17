@@ -1,0 +1,163 @@
+[csec4181@sel-39 ex2]$ gcc listarray.c -o link
+/tmp/ccxiJYFy.o: In function `Input':
+listarray.c:(.text+0x13d): warning: the `gets' function is dangerous and should not be used.
+[csec4181@sel-39 ex2]$ ./link
+
+Enter the maximum number of books: 10
+
+List is Created successfully
+
+Enter the no of books to be added: 2
+Enter the details for book-1: 
+Enter the ID: 901
+Enter the name of the book: origin
+Enter the genre: mystery
+Enter the author: dan brown
+Enter the year of publication: 1900
+Enter the details for book-2: 
+Enter the ID: 234
+Enter the name of the book: mein kampf
+Enter the genre: autobio      
+Enter the author: hitler
+Enter the year of publication: 1890
+
+
+1.Insert a new book after a given book
+2.Delete a particular book
+3.Search a given book by name
+4.Count the number of books under a particular genre
+5.Sort the books by author name and display
+6. Display list of books
+7.Exit
+Enter your choice: 6
+
+The details of the books are:
+ ID       TITLE           GENRE         AUTHOR       YOP
+901  origin		mystery	dan brown	1900
+
+234  mein kampf		autobio	hitler	1890
+
+
+Press 1 to go back to menu
+Press 2 to exit
+1
+
+
+1.Insert a new book after a given book
+2.Delete a particular book
+3.Search a given book by name
+4.Count the number of books under a particular genre
+5.Sort the books by author name and display
+6. Display list of books
+7.Exit
+Enter your choice: 1
+Enter the details for book to be inserted: 
+Enter the ID: 432
+Enter the name of the book: the door
+Enter the genre: mystery
+Enter the author: agatha
+Enter the year of publication: 1892
+Enter the name of the book after which the given book is to be inserted: origin
+
+Inserted successfully
+The list after inserting a book:
+
+The details of the books are:
+ ID       TITLE           GENRE         AUTHOR       YOP
+901  origin		mystery	dan brown	1900
+
+432  the door		mystery	agatha	1892
+
+234  mein kampf		autobio	hitler	1890
+
+
+Press 1 to go back to menu
+Press 2 to exit
+1
+
+
+1.Insert a new book after a given book
+2.Delete a particular book
+3.Search a given book by name
+4.Count the number of books under a particular genre
+5.Sort the books by author name and display
+6. Display list of books
+7.Exit
+Enter your choice: 3
+
+Enter book name to be searched: origin 
+
+The details of the books are:
+ ID       TITLE           GENRE         AUTHOR       YOP
+901  origin		mystery	dan brown	1900
+
+
+Press 1 to go back to menu
+Press 2 to exit
+1
+
+
+1.Insert a new book after a given book
+2.Delete a particular book
+3.Search a given book by name
+4.Count the number of books under a particular genre
+5.Sort the books by author name and display
+6. Display list of books
+7.Exit
+Enter your choice: 4
+
+Enter genre to be counted: mystery
+
+Number of records under the given genre mystery : 2
+Press 1 to go back to menu
+Press 2 to exit
+1
+
+
+1.Insert a new book after a given book
+2.Delete a particular book
+3.Search a given book by name
+4.Count the number of books under a particular genre
+5.Sort the books by author name and display
+6. Display list of books
+7.Exit
+Enter your choice: 5
+The sorted list based on author name: 
+
+The details of the books are:
+ ID       TITLE           GENRE         AUTHOR       YOP
+432  the door		mystery	agatha	1892
+
+901  origin		mystery	dan brown	1900
+
+234  mein kampf		autobio	hitler	1890
+
+
+Press 1 to go back to menu
+Press 2 to exit
+1
+
+
+1.Insert a new book after a given book
+2.Delete a particular book
+3.Search a given book by name
+4.Count the number of books under a particular genre
+5.Sort the books by author name and display
+6. Display list of books
+7.Exit
+Enter your choice: 2
+
+Enter book name to be deleted: origin
+Deleted successfully
+The list after deleting a book:
+
+The details of the books are:
+ ID       TITLE           GENRE         AUTHOR       YOP
+432  the door		mystery	agatha	1892
+
+234  mein kampf		autobio	hitler	1890
+
+
+Press 1 to go back to menu
+Press 2 to exit
+
